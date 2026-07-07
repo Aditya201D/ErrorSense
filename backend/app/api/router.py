@@ -1,6 +1,12 @@
 from fastapi import APIRouter
 
-from app.api.schemas import UserInput
+from app.api.schemas import (
+    UserInput,
+    PredictionResponse,
+    ErrorResponse,
+    StatusResponse,
+)
+
 from app.services.predictor import (
     predict_error,
     debug_predictions
@@ -9,7 +15,10 @@ from app.services.predictor import (
 router = APIRouter()
 
 
-@router.get("/")
+@router.get(
+    "/",
+    response_model=StatusResponse
+)
 def home():
 
     return {
@@ -17,7 +26,10 @@ def home():
     }
 
 
-@router.post("/predict")
+@router.post(
+    "/predict",
+    response_model=PredictionResponse | ErrorResponse
+)
 def predict(data: UserInput):
 
     return predict_error(
@@ -26,7 +38,9 @@ def predict(data: UserInput):
     )
 
 
-@router.post("/debug")
+@router.post(
+    "/debug"
+)
 def debug(data: UserInput):
 
     return debug_predictions(

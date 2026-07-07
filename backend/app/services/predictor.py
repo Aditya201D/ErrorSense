@@ -9,6 +9,11 @@ from app.config import (
     UNKNOWN_THRESHOLD,
     TOP_K
 )
+from app.api.schemas import (
+    AlternativePrediction,
+    PredictionResponse,
+    ErrorResponse
+)
 
 
 def predict_error(request: str, response: str):
@@ -23,10 +28,9 @@ def predict_error(request: str, response: str):
         "RESPONSE:\n", ""
     ).strip():
 
-        return {
-            "error":
-            "Please provide a request or response."
-        }
+        return ErrorResponse(
+            error="Please provide a request or response."
+        )
 
     probabilities = model.predict_proba(
         [combined_text]
@@ -60,31 +64,30 @@ def predict_error(request: str, response: str):
 
     if confidence < UNKNOWN_THRESHOLD:
 
-        return {
-            "category": "Unknown Error",
-            "confidence": round(
-                confidence * 100,
-                2
-            ),
-            "resolution":
-                "No matching category found.",
-            "alternatives": alternatives
-        }
+        return PredictionResponse(
+            category="Unknown Error",
+            confidence=round(confidence * 100, 2),
+            resolution="No matching category found.",
+            alternatives=[
+                AlternativePrediction(**alt)
+                for alt in alternatives
+            ]
+        )
 
     resolution = ERROR_SOLUTIONS.get(
         category,
         DEFAULT_RESOLUTION
     )
 
-    return {
-        "category": category,
-        "confidence": round(
-            confidence * 100,
-            2
-        ),
-        "resolution": resolution,
-        "alternatives": alternatives
-    }
+    return PredictionResponse(
+        category=category,
+        confidence=round(confidence * 100, 2),
+        resolution=resolution,
+        alternatives=[
+            AlternativePrediction(**alt)
+            for alt in alternatives
+        ]
+    )
 
 
 def debug_predictions(request: str, response: str):
