@@ -1,5 +1,7 @@
 import pandas as pd
 import joblib
+import json
+from datetime import datetime
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -138,6 +140,15 @@ predictions = pipeline.predict(
     X_test
 )
 
+report = classification_report(
+    y_test,
+    predictions,
+    output_dict=False,
+    zero_division=0
+)
+
+assert isinstance(report, str)
+
 accuracy = accuracy_score(
     y_test,
     predictions
@@ -145,6 +156,40 @@ accuracy = accuracy_score(
 
 print(
     f"Accuracy: {accuracy:.4f}"
+)
+
+with open(
+    "reports/classification_report.txt",
+    "w",
+    encoding="utf-8"
+) as f:
+    f.write(report)
+
+print(
+    "Classification report saved."
+)
+
+metadata = {
+    "model": "Logistic Regression",
+    "vectorizer": "TF-IDF",
+    "accuracy": round(accuracy, 4),
+    "dataset_size": len(df),
+    "categories": df["description"].nunique(),
+    "training_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+}
+
+with open(
+    "reports/model_metadata.json",
+    "w"
+) as f:
+    json.dump(
+        metadata,
+        f,
+        indent=4
+    )
+
+print(
+    "Model metadata saved."
 )
 
 # =====================================
