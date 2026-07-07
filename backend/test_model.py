@@ -8,12 +8,22 @@ print("Model loaded.")
 
 while True:
 
-    message = input("\nEnter error message: ")
+    request = input("\nRequest: ")
+    response = input("Response: ")
 
-    if message.lower() == "exit":
+    if (
+        request.lower() == "exit"
+        or response.lower() == "exit"
+    ):
         break
 
-    prediction = model.predict([message])[0]
+    combined_text = (
+        f"REQUEST:\n{request}\n\nRESPONSE:\n{response}"
+    )
+
+    prediction = model.predict(
+        [combined_text]
+    )[0]
 
     print("\nPredicted Category:")
     print(prediction)
