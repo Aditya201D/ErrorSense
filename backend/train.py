@@ -4,8 +4,11 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report
+)
 from sklearn.pipeline import Pipeline
-from sklearn.metrics import accuracy_score
 
 # =====================================
 # LOAD DATASET
@@ -48,8 +51,9 @@ df["description"] = (
 # =====================================
 
 df["combined_text"] = (
-    df["request_string"]
-    + " "
+    "REQUEST:\n"
+    + df["request_string"]
+    + "\n\nRESPONSE:\n"
     + df["response_string"]
 )
 
@@ -102,7 +106,6 @@ pipeline = Pipeline([
         "tfidf",
         TfidfVectorizer(
             lowercase=True,
-            stop_words="english",
             ngram_range=(1, 2),
             max_features=15000
         )
