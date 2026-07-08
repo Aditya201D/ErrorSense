@@ -203,12 +203,11 @@ def normalize_description(text: str) -> str:
     return text.strip()
 
 
-
 df = pd.read_excel(
     "data/Request and Response of failures.xlsx"
 )
 
-print(df.columns)
+
 
 df = df[
     [
@@ -277,6 +276,7 @@ print(
     .value_counts()
     .head(20)
 )
+
 
 # TRAIN TEST SPLIT
 X_train, X_test, y_train, y_test = train_test_split(

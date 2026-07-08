@@ -24,6 +24,10 @@ class PredictionResponse(BaseModel):
     confidence: float
     resolution: str
     alternatives: list[AlternativePrediction]
+    severity: str
+    module: str
+    next_step: str
+    documentation: str
 
 
 class ErrorResponse(BaseModel):

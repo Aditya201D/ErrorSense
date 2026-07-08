@@ -1,258 +1,59 @@
-category,resolution
-3,Review the error details and contact system support if the issue persists.
-ALREADY ACKNOWLEDGED,Review the error details and contact system support if the issue persists.
-"Aadhaar deactivated due to deceased status.(To re-activate Aadhaar, please visit Aadhaar Centre and update biometrics or approach regional office of UIDAI.)","Clean the biometric device, retry authentication, and verify user details."
-Aadhaar number does not have mobile number.,Verify Aadhaar details and retry authentication.
-Aadhaar suspended (Aadhaar is not in authenticatable status).(Your Aadhaar is suspended. Please approach nearest UIDAI Regional Office with valid POI Document.),Verify Aadhaar details and retry authentication.
-Biometric data did not match.,"Clean the biometric device, retry authentication, and verify user details."
-Biometrics locked by Aadhaar number holder.,"Clean the biometric device, retry authentication, and verify user details."
-Buyer Name not accpted because of 3 repeatitions of a letter is not allowed,Review the error details and contact system support if the issue persists.
-CONTACT SYSTEM ADMIN,Review the error details and contact system support if the issue persists.
-"Click on ""Forget Pin"" and update your pin first",Review the error details and contact system support if the issue persists.
-DEALER NOT REGISTERED FOR DEVICE,Register the dealer-device mapping before retrying.
-Device not registered with iFMS. Please contact fertilizer company,Register the device in the system and retry.
-ERROR: LOCK PERIOD EXCEEDED,Review the error details and contact system support if the issue persists.
-ERROR: Please Check DD Number You Entered,Review the error details and contact system support if the issue persists.
-ERROR: Txn Already Reversed,Review the error details and contact system support if the issue persists.
-Error! Biometric Device did not send correct PID Data,"Clean the biometric device, retry authentication, and verify user details."
-Exceeded Maximum OTP generation Limit. Try after 1 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 10 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 11 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 12 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 13 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 15 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 2 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 3 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 4 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 5 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 53 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 7 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 8 Mins,Request a new OTP and verify that the correct OTP is entered.
-Exceeded Maximum OTP generation Limit. Try after 9 Mins,Request a new OTP and verify that the correct OTP is entered.
-"For input string: ""K-517""",Review the error details and contact system support if the issue persists.
-"For input string: ""K-531""",Review the error details and contact system support if the issue persists.
-"For input string: ""K-998""",Review the error details and contact system support if the issue persists.
-INSUFFICIENT STOCK,Verify available stock and update inventory records if required.
-INVALID DEALER OR PIN,Verify the dealer credentials and try again.
-INVALID INTERFACE TYPE,Verify the entered information and try again.
-INVALID MAC ADDRESS,Verify the entered information and try again.
-INVALID REQUEST. KINDLY CHECK REQUEST.,Verify the entered information and try again.
-INVALID_OTP. OTP ENTERED IS WRONG,Request a new OTP and verify that the correct OTP is entered.
-Invalid Dealer Id,Verify the dealer credentials and try again.
-Invalid OTP value.,Request a new OTP and verify that the correct OTP is entered.
-Invalid mc code under Meta tag.,Verify the entered information and try again.
-Invalid value in the bs attribute of Bio element within Pid.,Verify the entered information and try again.
-Invalid wadh element,Verify the entered information and try again.
-LATITUDE AND LONGITUDE Already Updated,Review the error details and contact system support if the issue persists.
-MISSING_MOBILE_NO,Review the error details and contact system support if the issue persists.
-Maximum number of attempts for OTP match is exceeded or OTP is not generated.Please generate a fresh OTP and try again.,Request a new OTP and verify that the correct OTP is entered.
-Mobile No. not registered ,Review the error details and contact system support if the issue persists.
-NEW MOBILE NUMBER AND OLD MOBILE NUMBER SHOULD NOT MATCH,Review the error details and contact system support if the issue persists.
-NO RECORD FOUND,Verify the input details and ensure the record exists.
-No valid booking has been received for this QR_code/Aadhaar.,Verify Aadhaar details and retry authentication.
-Not sure. Pls. check spec.,Review the error details and contact system support if the issue persists.
-OTP Flooding error.,Request a new OTP and verify that the correct OTP is entered.
-Oops! failed to log or proceed for duplicate transaction reference. Please try afresh.,Use a new transaction reference and retry.
-"Owner Name not accpted because fuzzy matching result is 33.2% i.e.., less than threshold 75.0%_x000D_
-MAHAVIR SINGH : RAJ KUMAR",Review the error details and contact system support if the issue persists.
-"Owner Name not accpted because fuzzy matching result is 54.6% i.e.., less than threshold 75.0%_x000D_
-VISHAL KUMAR : AZAD KUMAR YADAV",Review the error details and contact system support if the issue persists.
-"Owner Name not accpted because fuzzy matching result is 70.2% i.e.., less than threshold 75.0%_x000D_
-SHIVAKUMAR K M : K M SHIVASHANKAR",Review the error details and contact system support if the issue persists.
-"Owner Name not accpted because fuzzy matching result is 73.0% i.e.., less than threshold 75.0%_x000D_
-CHANDRKANT : CHANDRA KANT SINGH",Review the error details and contact system support if the issue persists.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0132,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0274,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0332,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0345,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0377,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0432,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0470,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0492,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0552,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0696,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0705,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX0827,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX1102,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX1192,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX1225,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX1319,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX1746,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX1935,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX2520,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX2783,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX2828,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX2980,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3132,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3135,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3153,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3358,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3438,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3464,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3592,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3701,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX3738,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4257,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4291,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4317,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4430,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4456,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4684,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4727,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX4791,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5037,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5191,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5275,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5327,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5335,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5420,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5446,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5712,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX5775,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX6170,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX6218,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX6622,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX6913,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX6945,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7017,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7054,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7100,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7153,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7216,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7222,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7231,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7484,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7660,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX7977,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8178,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8237,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8556,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8603,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8617,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8665,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX8775,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9118,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9123,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9125,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9295,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9345,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9364,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9423,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9433,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9490,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9863,Verify Aadhaar details and retry authentication.
-PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9910,Verify Aadhaar details and retry authentication.
-Partial Acknowlegment Not Allowed,Review the error details and contact system support if the issue persists.
-Please check Aadhaar Number,Verify Aadhaar details and retry authentication.
-Purchased Qty more than Available Limit.,Review the error details and contact system support if the issue persists.
-RECPT QTY EXCEEDS SALE QTY,Review the error details and contact system support if the issue persists.
-Read timed out,Check network connectivity and retry the transaction.
-Request expired Pid->ts value is older than N hours where N is a configured threshold in authentication server).,Review the error details and contact system support if the issue persists.
-SALE TO RETAILER AND ITs USERS IS NOT ALLOWED,Review the error details and contact system support if the issue persists.
-Sale to this buyer has been made within a span of 60 minutes,Review the error details and contact system support if the issue persists.
-Session Timeout.Please Login Again,Check network connectivity and retry the transaction.
-Technical error that are internal to authentication server.,Review the error details and contact system support if the issue persists.
-The attribute 'ci' of 'skey' is not valid,Review the error details and contact system support if the issue persists.
-The attribute 'uid' of tag 'auth' is not a valid aadhaar number,Verify Aadhaar details and retry authentication.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: AgroPhos Meghnagar, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Arihant Fert, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: BalajiPhos, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Basant-Akola, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Basant-Akola, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Basant-Akola, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Basant-Jalgaon, Product: SSP-Powdered)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Basant-Jalgaon, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Basant-Jalgaon, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CFCL Gadepan-I, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CFCL Import, Product: Imported 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CFCL Import, Product: Imported DAP)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Import, Product: Imported 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Kakinada, Product: 14-35-14)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Kakinada, Product: 15-15-15-9)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Kakinada, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Vizag, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL-Nimrani (Earlier Liberty-Nimrani), Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL-Vadodara (Earlier Liberty-Vadodra), Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: FACT Cochin, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: GNFC Bharuch, Product: 20-20-0)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: GSFC Baroda, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: GSFC Baroda, Product: Amm Sulphate)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: GSFC Import, Product: Imported 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: GSFC Import, Product: Imported Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: GSFC Sikka, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Green Star, Product: 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Green Star, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: HURL- SINDRI, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: IFFCO Kalol, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: IFFCO Kandla, Product: 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: IFFCO Paradeep, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: IPL, Product: Imported 16-16-16)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: KCFL Dahej, Product: SSP-Granular)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: KCFL Dahej, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: KISAN SHAKTI FERTILIZERS and PESTICIDES PVT LTD, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: KPRCROP KOPPAL, Product: SSP-Granular)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: KRIBHCO Hazira, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: KRIBHCO Import, Product: Imported 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Krishana Phoschem Ltd, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Krishana Phoschem Ltd, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Krishana Phoschem Ltd-IND, Product: 12-32-16)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Krishana Phoschem Ltd-IND, Product: 15-15-15)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Krishana Phoschem Ltd-IND, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: M/S AARTI FERTILIZERS(A DIV OF AARTI INDS LTD), Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: M/S AARTI FERTILIZERS(A DIV OF AARTI INDS LTD), Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Madhya Bharat Agro Products Limited - II, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Madhya Bharat Phosphate Private Limited (Unit-2), Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Madhya Bharat Phosphate Private Limited (Unit-2), Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Mahadhan Agritech Limited Taloja, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Mahadhan Agritech Limited Taloja, Product: 24-24-0)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Mahadhan Agritech Limited Taloja, Product: NPK 9-24-24 (Mg, Zn, S,B) (40 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Mahadhan Agritech Limited Taloja, Product: Zinc and Boron NPK 8-21-21(40 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Nirma, Product: SSP-Granular)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: PPL Paradeep, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: PPL-Mangalore Import, Product: MOP)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: PPL-Mangalore, Product: 20-20-0-13)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: PPL-Mangalore, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Patel Phoschem, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: R.M. Phosphates & Chemicals Pvt. Ltd., Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RC Fertilizers, Product: SSP-Granular)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RC Fertilizers, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RC Fertilizers, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RC Fertilizers, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RCF Import, Product: Imported 10-26-26)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RCF Import, Product: Imported DAP)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RCF Thal, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RCF Trombay, Product: 15-15-15)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RCF Trombay, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RIPL FOM, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RMPCL Unit II, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rajlaxmi Agro, Product: SSP-G (Mg,Zn, Bo))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rajlaxmi Agro, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rajlaxmi Agro, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rajlaxmi Agro, Product: Urea-SSP Complex)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rama Phos-Indore, Product: SSP-Powdered)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rama Phos-Indore, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rama Phos-Indore, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Rama Phos-Indore, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RamaPhos-Udaipur, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: RamaPhos-Udaipur, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: SPIC Tuticorin, Product: Neem Coated Urea(45 Kg))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Shiva Global, Product: SSP-Granular)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Shiva Global, Product: SSP-Powdered)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Shiva Global, Product: SSP-Zincated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Shiva Global, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Shree Agro Crop Sciences Pvt Ltd FOM, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Singham Bio-SSP, Product: SSP-Zincated(Powder))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Singham Bio-SSP, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: ZACL-SSP, Product: SSP-Granular)",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: ZACL-SSP, Product: SSP-Zincated-Boronated(Granular))",Review the error details and contact system support if the issue persists.
-"The price/MRP must be same as the last two MRP entered by the company.(Plant: Zuari Import, Product: Imported 15-15-15)",Review the error details and contact system support if the issue persists.
-Txn Already Reversed,Review the error details and contact system support if the issue persists.
-UIDAI Authentication services not reachable or timed out for response,Check network connectivity and retry the transaction.
-UID_AUTHENTICATION_FAILED,Verify Aadhaar details and retry authentication.
-UNIT can only be (Kg Bags) for product Zinc and Boron NPK 8-21-21 40kg,Review the error details and contact system support if the issue persists.
-You Have Been Logged Into Another Device.Your Session From This Device Is Expired.,Log in again and repeat the operation.
-You have exhausted the limit of getting updated pin on your mobile,Review the error details and contact system support if the issue persists.
-You have exhausted the limit of varifying otp.Kindly generate another pin and try once again,Request a new OTP and verify that the correct OTP is entered.
-Your QR code is not active yet,Activate the QR code and retry the operation.
-org.hibernate.exception.ConstraintViolationException: could not execute statement,Review the error details and contact system support if the issue persists.
-rdsVer is invalid and not part of certification registry.,Verify the entered information and try again.
+category,severity,module,resolution,next_step,documentation
+3,Low,System,Review the request and retry.,Retry the operation.,Generic system response.
+ALREADY ACKNOWLEDGED,Low,Acknowledgement,The request has already been acknowledged.,No further action is required.,Duplicate acknowledgement.
+Aadhaar number does not have mobile number.,Medium,Aadhaar,Link a mobile number with the Aadhaar.,Update Aadhaar details through UIDAI.,OTP authentication requires a linked mobile number.
+Aadhaar suspended (Aadhaar is not in authenticatable status).(Your Aadhaar is suspended. Please approach nearest UIDAI Regional Office with valid POI Document.),High,Aadhaar,Visit the nearest UIDAI Regional Office.,Reactivate the Aadhaar using valid identity documents.,Authentication is blocked until Aadhaar is restored.
+Biometric data did not match.,Medium,Biometric Authentication,Retry biometric authentication.,Capture a fresh fingerprint or iris scan.,Biometric verification failed.
+Biometrics locked by Aadhaar number holder.,High,Aadhaar,Unlock biometrics through UIDAI.,Use the UIDAI portal or mAadhaar application.,Biometric authentication has been disabled by the Aadhaar holder.
+Buyer Name not accpted because of 3 repeatitions of a letter is not allowed,Low,Validation,Correct the buyer name.,Remove repeated characters and retry.,Input validation failed.
+CONTACT SYSTEM ADMIN,High,System,Contact the system administrator.,Provide logs and request details.,Administrative intervention required.
+Click on "Forget Pin" and update your pin first,Medium,Authentication,Reset the PIN using the Forget PIN option.,Login again after updating the PIN.,PIN update required.
+DEALER NOT REGISTERED FOR DEVICE,High,Device Registration,Register the device for the dealer.,Contact the fertilizer company or administrator.,Device is not mapped to the dealer.
+Device not registered with iFMS. Please contact fertilizer company,High,Device Registration,Register the device in iFMS.,Contact the fertilizer company.,Device registration missing.
+ERROR: LOCK PERIOD EXCEEDED,Medium,Authentication,Wait until the lock period expires.,Retry after the cooldown period.,Too many failed authentication attempts.
+ERROR: Please Check DD Number You Entered,Medium,Payment,Verify the DD number.,Enter the correct Demand Draft number.,Invalid payment reference.
+ERROR: Txn Already Reversed,Medium,Transaction,The transaction has already been reversed.,Do not initiate another reversal.,Duplicate reversal request.
+Error! Biometric Device did not send correct PID Data,High,Biometric Device,Reconnect or restart the biometric device.,Capture a fresh biometric sample.,PID block is invalid.
+Exceeded Maximum OTP generation Limit. Try after N Mins,Low,OTP,Wait before requesting another OTP.,Retry after the specified time.,OTP rate limit exceeded.
+For input string,Low,Validation,Verify the entered value.,Ensure only valid numeric/text input is provided.,Input parsing error.
+INSUFFICIENT STOCK,Medium,Inventory,Update stock before retrying.,Reduce the requested quantity or replenish stock.,Inventory is insufficient.
+INVALID DEALER OR PIN,Medium,Authentication,Verify Dealer ID and PIN.,Retry using valid credentials.,Dealer authentication failed.
+INVALID INTERFACE TYPE,Medium,API,Use a valid interface type.,Verify the client configuration.,Invalid API interface identifier.
+INVALID MAC ADDRESS,Medium,Device,Verify the registered MAC address.,Use the registered device only.,MAC address validation failed.
+INVALID REQUEST. KINDLY CHECK REQUEST.,Medium,API,Verify the request payload.,Correct malformed or missing fields.,Malformed request received.
+INVALID_OTP. OTP ENTERED IS WRONG,Low,OTP,Generate a fresh OTP if required.,Enter the correct OTP.,OTP validation failed.
+Invalid Dealer Id,Medium,Authentication,Verify the Dealer ID.,Retry with the correct Dealer ID.,Dealer identifier not found.
+Invalid OTP value.,Low,OTP,Enter a valid OTP.,Generate a new OTP if required.,OTP format or value is invalid.
+Invalid mc code under Meta tag.,Medium,Biometric Device,Verify the biometric device configuration.,Update the device configuration.,Invalid metadata received.
+Invalid value in the bs attribute of Bio element within Pid.,Medium,Biometric Device,Verify PID block generation.,Update the biometric SDK if required.,Malformed biometric request.
+Invalid wadh element,Medium,Biometric Device,Generate the request using a supported SDK.,Verify WADH configuration.,Invalid WADH element.
+MISSING_MOBILE_NO,Medium,Aadhaar,Register a mobile number with Aadhaar.,Update Aadhaar details.,Mobile number is mandatory.
+Maximum number of attempts for OTP match is exceeded or OTP is not generated.Please generate a fresh OTP and try again.,Low,OTP,Generate a new OTP.,Retry using the latest OTP.,OTP retry limit exceeded.
+NEW MOBILE NUMBER AND OLD MOBILE NUMBER SHOULD NOT MATCH,Low,Profile,Provide a different mobile number.,Retry with a new number.,Validation rule failed.
+NO RECORD FOUND,Low,Database,Verify the provided information.,Ensure the record exists before retrying.,Requested record was not found.
+No valid booking has been received for this QR_code/Aadhaar.,Medium,QR Booking,Verify booking information.,Retry after booking synchronization.,No booking associated with the QR code.
+Not sure. Pls. check spec.,Medium,System,Review API specifications.,Validate request format.,Unclassified system validation.
+OTP Flooding error.,Low,OTP,Reduce OTP requests.,Retry after some time.,OTP request rate exceeded.
+Oops! failed to log or proceed for duplicate transaction reference. Please try afresh.,Medium,Transaction,Generate a new transaction reference.,Retry with a unique reference.,Duplicate transaction detected.
+PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX,High,Aadhaar,Register using the primary Aadhaar.,Complete Aadhaar registration before retrying.,Primary Aadhaar registration missing.
+Partial Acknowlegment Not Allowed,Low,Acknowledgement,Send the complete acknowledgement.,Retry with complete transaction details.,Partial acknowledgements are not supported.
+Please check Aadhaar Number,Medium,Aadhaar,Verify the Aadhaar number.,Correct the Aadhaar number and retry.,Invalid Aadhaar number.
+Purchased Qty more than Available Limit.,Medium,Inventory,Reduce the purchase quantity.,Retry within the available limit.,Purchase exceeds allowed quantity.
+RECPT QTY EXCEEDS SALE QTY,Medium,Inventory,Verify receipt and sale quantities.,Correct the transaction quantities.,Receipt exceeds recorded sales.
+Read timed out,Medium,Network,Retry the request after a few seconds.,Check network connectivity if the issue persists.,Communication timeout occurred.
+Request expired Pid->ts value is older than N hours where N is a configured threshold in authentication server).,Medium,Biometric Authentication,Capture a fresh biometric sample.,Generate a new authentication request.,PID timestamp expired.
+SALE TO RETAILER AND ITs USERS IS NOT ALLOWED,Medium,Sales,Verify the buyer type.,Sell only to eligible customers.,Restricted transaction.
+Sale to this buyer has been made within a span of 60 minutes,Low,Sales,Wait before attempting another sale.,Retry after the restriction period.,Duplicate sale prevention rule.
+Session Timeout.Please Login Again,Low,Authentication,Log in again.,Start a new session.,Session has expired.
+Technical error that are internal to authentication server.,High,Authentication Server,Retry after some time.,Contact support if the issue persists.,Internal server error.
+The attribute 'ci' of 'skey' is not valid,Medium,Biometric Authentication,Verify the encryption certificate.,Update the biometric SDK if necessary.,Invalid certificate identifier.
+The attribute 'uid' of tag 'auth' is not a valid aadhaar number,Medium,Aadhaar,Verify the Aadhaar number.,Retry with a valid Aadhaar number.,Invalid UID format.
+The price/MRP must be same as the last two MRP entered by the company.,Medium,Inventory Pricing,Use the same MRP configured by the company.,Verify product pricing before retrying.,MRP consistency validation failed.
+Txn Already Reversed,Medium,Transaction,The transaction has already been reversed.,No further action is required.,Duplicate reversal detected.
+UIDAI Authentication services not reachable or timed out for response,High,UIDAI Service,Retry after a short interval.,Verify network connectivity if persistent.,External UIDAI service unavailable.
+UID_AUTHENTICATION_FAILED,High,UIDAI Authentication,Retry Aadhaar authentication.,Capture a fresh biometric sample or OTP.,UIDAI authentication failed.
+You Have Been Logged Into Another Device.Your Session From This Device Is Expired.,Medium,Authentication,Log in again on the current device.,Avoid simultaneous logins from multiple devices.,Session invalidated due to another login.
+You have exhausted the limit of getting updated pin on your mobile,Low,PIN Management,Wait before requesting another PIN update.,Retry after the cooldown period.,PIN update limit exceeded.
+You have exhausted the limit of varifying otp.Kindly generate another pin and try once again,Low,OTP,Generate a fresh OTP.,Retry using the latest OTP.,OTP verification limit exceeded.
+Your QR code is not active yet,Medium,QR Management,Activate the QR code before use.,Contact the issuing authority if activation is delayed.,QR code not yet active.
+org.hibernate.exception.ConstraintViolationException: could not execute statement,High,Database,Review database constraints and transaction data.,Check duplicate or invalid records before retrying.,Database integrity constraint violation.

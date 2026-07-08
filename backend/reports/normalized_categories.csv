@@ -1,0 +1,59 @@
+category
+3
+ALREADY ACKNOWLEDGED
+Aadhaar number does not have mobile number.
+Aadhaar suspended (Aadhaar is not in authenticatable status).(Your Aadhaar is suspended. Please approach nearest UIDAI Regional Office with valid POI Document.)
+Biometric data did not match.
+Biometrics locked by Aadhaar number holder.
+Buyer Name not accpted because of 3 repeatitions of a letter is not allowed
+CONTACT SYSTEM ADMIN
+"Click on ""Forget Pin"" and update your pin first"
+DEALER NOT REGISTERED FOR DEVICE
+Device not registered with iFMS. Please contact fertilizer company
+ERROR: LOCK PERIOD EXCEEDED
+ERROR: Please Check DD Number You Entered
+ERROR: Txn Already Reversed
+Error! Biometric Device did not send correct PID Data
+Exceeded Maximum OTP generation Limit. Try after N Mins
+For input string
+INSUFFICIENT STOCK
+INVALID DEALER OR PIN
+INVALID INTERFACE TYPE
+INVALID MAC ADDRESS
+INVALID REQUEST. KINDLY CHECK REQUEST.
+INVALID_OTP. OTP ENTERED IS WRONG
+Invalid Dealer Id
+Invalid OTP value.
+Invalid mc code under Meta tag.
+Invalid value in the bs attribute of Bio element within Pid.
+Invalid wadh element
+MISSING_MOBILE_NO
+Maximum number of attempts for OTP match is exceeded or OTP is not generated.Please generate a fresh OTP and try again.
+NEW MOBILE NUMBER AND OLD MOBILE NUMBER SHOULD NOT MATCH
+NO RECORD FOUND
+No valid booking has been received for this QR_code/Aadhaar.
+Not sure. Pls. check spec.
+OTP Flooding error.
+Oops! failed to log or proceed for duplicate transaction reference. Please try afresh.
+PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX
+Partial Acknowlegment Not Allowed
+Please check Aadhaar Number
+Purchased Qty more than Available Limit.
+RECPT QTY EXCEEDS SALE QTY
+Read timed out
+Request expired Pid->ts value is older than N hours where N is a configured threshold in authentication server).
+SALE TO RETAILER AND ITs USERS IS NOT ALLOWED
+Sale to this buyer has been made within a span of 60 minutes
+Session Timeout.Please Login Again
+Technical error that are internal to authentication server.
+The attribute 'ci' of 'skey' is not valid
+The attribute 'uid' of tag 'auth' is not a valid aadhaar number
+The price/MRP must be same as the last two MRP entered by the company.
+Txn Already Reversed
+UIDAI Authentication services not reachable or timed out for response
+UID_AUTHENTICATION_FAILED
+You Have Been Logged Into Another Device.Your Session From This Device Is Expired.
+You have exhausted the limit of getting updated pin on your mobile
+You have exhausted the limit of varifying otp.Kindly generate another pin and try once again
+Your QR code is not active yet
+org.hibernate.exception.ConstraintViolationException: could not execute statement

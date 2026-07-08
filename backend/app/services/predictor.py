@@ -1,14 +1,17 @@
 import numpy as np
 
 from app.services.model_loader import model
+
 from app.utils.knowledge_base import (
-    ERROR_SOLUTIONS,
-    DEFAULT_RESOLUTION
+    ERROR_KB,
+    DEFAULT_RECORD
 )
+
 from app.config import (
     UNKNOWN_THRESHOLD,
     TOP_K
 )
+
 from app.api.schemas import (
     AlternativePrediction,
     PredictionResponse,
@@ -53,40 +56,70 @@ def predict_error(request: str, response: str):
     for idx in top_indices[1:TOP_K]:
 
         alternatives.append(
-            {
-                "category": model.classes_[idx],
-                "confidence": round(
+            AlternativePrediction(
+                category=model.classes_[idx],
+                confidence=round(
                     float(probabilities[idx]) * 100,
                     2
                 )
-            }
+            )
         )
+
+    record = ERROR_KB.get(
+        category,
+        DEFAULT_RECORD
+    )
 
     if confidence < UNKNOWN_THRESHOLD:
 
         return PredictionResponse(
+
             category="Unknown Error",
-            confidence=round(confidence * 100, 2),
-            resolution="No matching category found.",
-            alternatives=[
-                AlternativePrediction(**alt)
-                for alt in alternatives
-            ]
+
+            confidence=round(
+                confidence * 100,
+                2
+            ),
+
+            severity="Unknown",
+
+            module="Unknown",
+
+            resolution=DEFAULT_RECORD[
+                "resolution"
+            ],
+
+            next_step=DEFAULT_RECORD[
+                "next_step"
+            ],
+
+            documentation=DEFAULT_RECORD[
+                "documentation"
+            ],
+
+            alternatives=alternatives
         )
 
-    resolution = ERROR_SOLUTIONS.get(
-        category,
-        DEFAULT_RESOLUTION
-    )
-
     return PredictionResponse(
+
         category=category,
-        confidence=round(confidence * 100, 2),
-        resolution=resolution,
-        alternatives=[
-            AlternativePrediction(**alt)
-            for alt in alternatives
-        ]
+
+        confidence=round(
+            confidence * 100,
+            2
+        ),
+
+        severity=record["severity"],
+
+        module=record["module"],
+
+        resolution=record["resolution"],
+
+        next_step=record["next_step"],
+
+        documentation=record["documentation"],
+
+        alternatives=alternatives
     )
 
 
@@ -106,13 +139,22 @@ def debug_predictions(request: str, response: str):
 
     for idx in indices:
 
+        category = model.classes_[idx]
+
+        record = ERROR_KB.get(
+            category,
+            DEFAULT_RECORD
+        )
+
         results.append(
             {
-                "category": model.classes_[idx],
+                "category": category,
                 "confidence": round(
                     float(probabilities[idx]) * 100,
                     2
-                )
+                ),
+                "severity": record["severity"],
+                "module": record["module"]
             }
         )
 
