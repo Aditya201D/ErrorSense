@@ -14,10 +14,7 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 
-# =====================================
-# REMOVE RANDOM / ENCRYPTED FIELDS
-# =====================================
-
+# We will remove the random and useless fields from the request strings.
 FIELDS_TO_REMOVE = [
     "uid",
     "otp",
@@ -32,10 +29,8 @@ FIELDS_TO_REMOVE = [
     "aadharUserId"
 ]
 
-# =====================================
-# REQUEST FEATURE EXTRACTION
-# =====================================
 
+# We will extract the important defining (which help in classifying) features of requests
 IMPORTANT_REQUEST_FIELDS = [
     "entity",
     "interfaceType",
@@ -44,16 +39,7 @@ IMPORTANT_REQUEST_FIELDS = [
     "saleTypeId"
 ]
 
-PRESENCE_FIELDS = [
-    "pin",
-    "uid",
-    "otp",
-    "mac",
-    "certificate",
-    "PidData",
-    "deviceId"
-]
-
+# A map to make parsing easier for TF-IDF.
 FIELD_NAMES = {
     "entity": "ENTITY",
     "interfaceType": "INTERFACE",
@@ -62,18 +48,7 @@ FIELD_NAMES = {
     "saleTypeId": "SALE_TYPE",
 }
 
-# =====================================
-# REQUEST FEATURE EXTRACTION
-# =====================================
-
-IMPORTANT_REQUEST_FIELDS = [
-    "entity",
-    "interfaceType",
-    "version",
-    "stateShortName",
-    "saleTypeId"
-]
-
+# We will use presence flags to just indicate the presence of a field in a request, no need to remember its value
 PRESENCE_FIELDS = [
     "pin",
     "uid",
@@ -82,21 +57,14 @@ PRESENCE_FIELDS = [
     "PidData"
 ]
 
-FIELD_NAMES = {
-    "entity": "ENTITY",
-    "interfaceType": "INTERFACE",
-    "version": "VERSION",
-    "stateShortName": "STATE",
-    "saleTypeId": "SALE_TYPE",
-}
+# ========== REQUEST PARSER ==============
 
 def extract_request_features(text: str) -> str:
     if not text.strip():
         return ""
     features = []
-    # --------------------------
-    # JSON REQUEST
-    # --------------------------
+    
+    # If request is JSON
     if text.strip().startswith("{"):
         try:
             data = json.loads(text)
@@ -119,9 +87,7 @@ def extract_request_features(text: str) -> str:
         except Exception:
             return ""
 
-    # --------------------------
-    # XML REQUEST
-    # --------------------------
+    # If request is XML
     if text.strip().startswith("<"):
         try:
             root = ET.fromstring(text)
@@ -148,84 +114,58 @@ def extract_request_features(text: str) -> str:
             return ""
     return ""
 
-# =====================================
-# RESPONSE FEATURE EXTRACTION
-# =====================================
+# ============= RESPONSE PARSER ===================
 
 def extract_response_features(text: str) -> str:
-
     if not text.strip():
         return ""
 
     features = []
-
     cleaned_text = text.strip()
 
-    # Some rows contain multiple JSON objects.
-    # We'll parse only the first one.
+    # Some rows contain multiple JSON objects. We'll parse only the first one.
     decoder = json.JSONDecoder()
-
     try:
-
         response, _ = decoder.raw_decode(cleaned_text)
-
         features.append("RESPONSE_TYPE=JSON")
-
         status = response.get("statusCode")
-
         if status:
             features.append(
                 f"STATUS={status}"
             )
 
         description = response.get("description")
-
         if description:
             features.append(
                 f"DESCRIPTION={description}"
             )
 
         field_errors = response.get("fieldErrors")
-
         if isinstance(field_errors, dict):
-
             for values in field_errors.values():
-
                 if isinstance(values, list):
-
                     for error in values:
-
                         features.append(
                             f"FIELD_ERROR={error}"
                         )
 
         return (
-            " ".join(features)
-            + "\n"
-            + cleaned_text
+            " ".join(features) + "\n" + cleaned_text
         )
 
     except Exception:
-
         # Not valid JSON.
         # Still keep the response text.
         return cleaned_text
     
-# =====================================
-# DESCRIPTION NORMALIZATION
-# =====================================
+# ============= NORMALIZING DESCRIPTION FEATURE ================
 
 def normalize_description(text: str) -> str:
-
     if not text:
         return ""
-
     text = text.strip()
-
-    # ---------------------------------
-    # OTP cooldown messages
-    # ---------------------------------
-
+    
+    # OTP Cooldown type
     text = re.sub(
         r"Try after\s+\d+\s+Mins?",
         "Try after N Mins",
@@ -233,57 +173,43 @@ def normalize_description(text: str) -> str:
         flags=re.IGNORECASE
     )
 
-    # ---------------------------------
-    # Masked Aadhaar
-    # ---------------------------------
-
+    # Aadhar type
     text = re.sub(
         r"XXXXXXXX\d{4}",
         "XXXXXXXX",
         text
     )
 
-    # ---------------------------------
-    # Plant / Product information
-    # ---------------------------------
-
+    # Plant/Product type
     text = re.sub(
         r"\(Plant:.*",
         "",
         text
     )
-
-    # ---------------------------------
+    
     # Input string values
-    # ---------------------------------
-
     text = re.sub(
         r'For input string:\s*".*?"',
         "For input string",
         text
     )
 
-    # ---------------------------------
     # Multiple spaces
-    # ---------------------------------
-
     text = re.sub(
         r"\s+",
         " ",
         text
     )
-
     return text.strip()
 
-# =====================================
-# LOAD DATASET
-# =====================================
+
 
 df = pd.read_excel(
     "data/Request and Response of failures.xlsx"
 )
 
-# Keep required columns
+print(df.columns)
+
 df = df[
     [
         "request_string",
@@ -292,7 +218,6 @@ df = df[
     ]
 ]
 
-# Fill missing values
 df["request_string"] = (
     df["request_string"]
     .fillna("")
@@ -314,51 +239,25 @@ df["description"] = (
     .apply(normalize_description)
 )
 
-# =====================================
-# COMBINE REQUEST + RESPONSE
-# =====================================
-
+# Combining the request and response columns
 df["combined_text"] = (
     "REQUEST\n"
-    + df["request_features"]
+    + df["request_string"]
     + "\n\n"
     + "RESPONSE\n"
-    + df["response_features"]
+    + df["response_string"]
 )
 
-print("\nExample request features:\n")
-print(df["request_string"].iloc[0])
-
-print("\nExample response features:\n")
-print(df["response_string"].iloc[0])
-
-print("\nExample normalized descriptions:\n")
-
-examples = [
-    "Exceeded Maximum OTP generation Limit. Try after 5 Mins",
-    "PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9123",
-    'For input string: "K-517"',
-    "The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Kakinada, Product: 20-20-0-13)"
-]
-
-for e in examples:
-    print(normalize_description(e))
-
-# =====================================
-# REMOVE RARE CATEGORIES
-# =====================================
-
+# Removing description categories with less than 2 samples
 category_counts = (
     df["description"]
     .value_counts()
 )
-
 valid_categories = (
     category_counts[
         category_counts >= 2
     ].index
 )
-
 df = df[
     df["description"]
     .isin(valid_categories)
@@ -373,17 +272,13 @@ print(
 )
 
 print("\nTop 20 categories:\n")
-
 print(
     df["description"]
     .value_counts()
     .head(20)
 )
 
-# =====================================
 # TRAIN TEST SPLIT
-# =====================================
-
 X_train, X_test, y_train, y_test = train_test_split(
     df["combined_text"],
     df["description"],
@@ -392,10 +287,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=df["description"]
 )
 
-# =====================================
 # MODEL PIPELINE
-# =====================================
-
 pipeline = Pipeline([
     (
         "tfidf",
@@ -414,10 +306,6 @@ pipeline = Pipeline([
     )
 ])
 
-# =====================================
-# TRAIN
-# =====================================
-
 print("\nTraining model...")
 
 pipeline.fit(
@@ -425,14 +313,12 @@ pipeline.fit(
     y_train
 )
 
-# =====================================
-# EVALUATION
-# =====================================
-
 predictions = pipeline.predict(
     X_test
 )
 
+
+# SAVING A REPORT
 report = classification_report(
     y_test,
     predictions,
@@ -485,10 +371,7 @@ print(
     "Model metadata saved."
 )
 
-# =====================================
 # SAVE MODEL
-# =====================================
-
 joblib.dump(
     pipeline,
     "model/error_classifier.pkl"
