@@ -32,57 +32,184 @@ FIELDS_TO_REMOVE = [
     "aadharUserId"
 ]
 
-def clean_request(text: str) -> str:
+# =====================================
+# REQUEST FEATURE EXTRACTION
+# =====================================
+
+IMPORTANT_REQUEST_FIELDS = [
+    "entity",
+    "interfaceType",
+    "version",
+    "stateShortName",
+    "saleTypeId"
+]
+
+PRESENCE_FIELDS = [
+    "pin",
+    "uid",
+    "otp",
+    "mac",
+    "certificate",
+    "PidData",
+    "deviceId"
+]
+
+FIELD_NAMES = {
+    "entity": "ENTITY",
+    "interfaceType": "INTERFACE",
+    "version": "VERSION",
+    "stateShortName": "STATE",
+    "saleTypeId": "SALE_TYPE",
+}
+
+# =====================================
+# REQUEST FEATURE EXTRACTION
+# =====================================
+
+IMPORTANT_REQUEST_FIELDS = [
+    "entity",
+    "interfaceType",
+    "version",
+    "stateShortName",
+    "saleTypeId"
+]
+
+PRESENCE_FIELDS = [
+    "pin",
+    "uid",
+    "otp",
+    "certificate",
+    "PidData"
+]
+
+FIELD_NAMES = {
+    "entity": "ENTITY",
+    "interfaceType": "INTERFACE",
+    "version": "VERSION",
+    "stateShortName": "STATE",
+    "saleTypeId": "SALE_TYPE",
+}
+
+def extract_request_features(text: str) -> str:
+    if not text.strip():
+        return ""
+    features = []
+    # --------------------------
+    # JSON REQUEST
+    # --------------------------
+    if text.strip().startswith("{"):
+        try:
+            data = json.loads(text)
+            features.append("REQUEST_JSON")
+            for field in IMPORTANT_REQUEST_FIELDS:
+                value = data.get(field)
+                if value not in [None, ""]:
+                    features.append(
+                        f"{FIELD_NAMES[field]}_{value}"
+                    )
+
+            for field in PRESENCE_FIELDS:
+                if field in data:
+                    features.append(
+                        f"HAS_{field.upper()}"
+                    )
+
+            return " ".join(features)
+
+        except Exception:
+            return ""
+
+    # --------------------------
+    # XML REQUEST
+    # --------------------------
+    if text.strip().startswith("<"):
+        try:
+            root = ET.fromstring(text)
+            features.append("REQUEST_XML")
+            for field in IMPORTANT_REQUEST_FIELDS:
+                element = root.find(field)
+                if (
+                    element is not None
+                    and element.text
+                ):
+                    features.append(
+                        f"{FIELD_NAMES[field]}_{element.text}"
+                    )
+
+            for field in PRESENCE_FIELDS:
+                if root.find(field) is not None:
+                    features.append(
+                        f"HAS_{field.upper()}"
+                    )
+
+            return " ".join(features)
+        
+        except Exception:
+            return ""
+    return ""
+
+# =====================================
+# RESPONSE FEATURE EXTRACTION
+# =====================================
+
+def extract_response_features(text: str) -> str:
 
     if not text.strip():
         return ""
 
-    # -----------------------------
-    # JSON requests
-    # -----------------------------
-    if text.strip().startswith("{"):
+    features = []
 
-        try:
+    cleaned_text = text.strip()
 
-            data = json.loads(text)
+    # Some rows contain multiple JSON objects.
+    # We'll parse only the first one.
+    decoder = json.JSONDecoder()
 
-            for field in FIELDS_TO_REMOVE:
-                data.pop(field, None)
+    try:
 
-            return json.dumps(
-                data,
-                separators=(",", ":"),
-                sort_keys=True
+        response, _ = decoder.raw_decode(cleaned_text)
+
+        features.append("RESPONSE_JSON")
+
+        status = response.get("statusCode")
+
+        if status:
+            features.append(
+                f"STATUS_{status}"
             )
 
-        except Exception:
-            return text
+        description = response.get("description")
 
-    # -----------------------------
-    # XML requests
-    # -----------------------------
-    if text.strip().startswith("<"):
-
-        try:
-
-            root = ET.fromstring(text)
-
-            for field in FIELDS_TO_REMOVE:
-
-                element = root.find(field)
-
-                if element is not None:
-                    root.remove(element)
-
-            return ET.tostring(
-                root,
-                encoding="unicode"
+        if description:
+            features.append(
+                f"DESCRIPTION_{description}"
             )
 
-        except Exception:
-            return text
+        field_errors = response.get("fieldErrors")
 
-    return text
+        if isinstance(field_errors, dict):
+
+            for values in field_errors.values():
+
+                if isinstance(values, list):
+
+                    for error in values:
+
+                        features.append(
+                            f"FIELD_ERROR_{error}"
+                        )
+
+        return (
+            " ".join(features)
+            + "\n"
+            + cleaned_text
+        )
+
+    except Exception:
+
+        # Not valid JSON.
+        # Still keep the response text.
+        return cleaned_text
 
 # =====================================
 # LOAD DATASET
@@ -106,13 +233,14 @@ df["request_string"] = (
     df["request_string"]
     .fillna("")
     .astype(str)
-    .apply(clean_request)
+    .apply(extract_request_features)
 )
 
 df["response_string"] = (
     df["response_string"]
     .fillna("")
     .astype(str)
+    .apply(extract_response_features)
 )
 
 df["description"] = (
@@ -132,8 +260,11 @@ df["combined_text"] = (
     + df["response_string"]
 )
 
-print("\nExample cleaned request:\n")
+print("\nExample request features:\n")
 print(df["request_string"].iloc[0])
+
+print("\nExample response features:\n")
+print(df["response_string"].iloc[0])
 
 # =====================================
 # REMOVE RARE CATEGORIES
