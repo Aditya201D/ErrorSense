@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.router import router
 
 app = FastAPI(
-    title="Request Response Categoriser API"
+    title="ErrorSense API"
 )
 
 app.add_middleware(
