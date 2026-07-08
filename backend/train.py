@@ -1,7 +1,9 @@
 import pandas as pd
 import joblib
 import json
+import re
 from datetime import datetime
+import xml.etree.ElementTree as ET
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -11,6 +13,76 @@ from sklearn.metrics import (
     classification_report
 )
 from sklearn.pipeline import Pipeline
+
+# =====================================
+# REMOVE RANDOM / ENCRYPTED FIELDS
+# =====================================
+
+FIELDS_TO_REMOVE = [
+    "uid",
+    "otp",
+    "codeHash",
+    "loginToken",
+    "otpTxnId",
+    "rid",
+    "mac",
+    "certificate",
+    "signature",
+    "transactionId",
+    "aadharUserId"
+]
+
+def clean_request(text: str) -> str:
+
+    if not text.strip():
+        return ""
+
+    # -----------------------------
+    # JSON requests
+    # -----------------------------
+    if text.strip().startswith("{"):
+
+        try:
+
+            data = json.loads(text)
+
+            for field in FIELDS_TO_REMOVE:
+                data.pop(field, None)
+
+            return json.dumps(
+                data,
+                separators=(",", ":"),
+                sort_keys=True
+            )
+
+        except Exception:
+            return text
+
+    # -----------------------------
+    # XML requests
+    # -----------------------------
+    if text.strip().startswith("<"):
+
+        try:
+
+            root = ET.fromstring(text)
+
+            for field in FIELDS_TO_REMOVE:
+
+                element = root.find(field)
+
+                if element is not None:
+                    root.remove(element)
+
+            return ET.tostring(
+                root,
+                encoding="unicode"
+            )
+
+        except Exception:
+            return text
+
+    return text
 
 # =====================================
 # LOAD DATASET
@@ -34,6 +106,7 @@ df["request_string"] = (
     df["request_string"]
     .fillna("")
     .astype(str)
+    .apply(clean_request)
 )
 
 df["response_string"] = (
@@ -58,6 +131,9 @@ df["combined_text"] = (
     + "\n\nRESPONSE:\n"
     + df["response_string"]
 )
+
+print("\nExample cleaned request:\n")
+print(df["request_string"].iloc[0])
 
 # =====================================
 # REMOVE RARE CATEGORIES

@@ -1,8 +1,8 @@
 {
     "model": "Logistic Regression",
     "vectorizer": "TF-IDF",
-    "accuracy": 0.9386,
+    "accuracy": 0.9424,
     "dataset_size": 7894,
     "categories": 147,
-    "training_date": "2026-07-07 21:08:41"
+    "training_date": "2026-07-08 15:07:37"
 }
