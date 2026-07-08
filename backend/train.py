@@ -100,18 +100,18 @@ def extract_request_features(text: str) -> str:
     if text.strip().startswith("{"):
         try:
             data = json.loads(text)
-            features.append("REQUEST_JSON")
+            features.append("REQUEST_TYPE=JSON")
             for field in IMPORTANT_REQUEST_FIELDS:
                 value = data.get(field)
                 if value not in [None, ""]:
                     features.append(
-                        f"{FIELD_NAMES[field]}_{value}"
+                        f"{FIELD_NAMES[field]}={value}"
                     )
 
             for field in PRESENCE_FIELDS:
                 if field in data:
                     features.append(
-                        f"HAS_{field.upper()}"
+                        f"HAS={field.upper()}"
                     )
 
             return " ".join(features)
@@ -125,7 +125,7 @@ def extract_request_features(text: str) -> str:
     if text.strip().startswith("<"):
         try:
             root = ET.fromstring(text)
-            features.append("REQUEST_XML")
+            features.append("REQUEST_TYPE=XML")
             for field in IMPORTANT_REQUEST_FIELDS:
                 element = root.find(field)
                 if (
@@ -133,13 +133,13 @@ def extract_request_features(text: str) -> str:
                     and element.text
                 ):
                     features.append(
-                        f"{FIELD_NAMES[field]}_{element.text}"
+                        f"{FIELD_NAMES[field]}={element.text}"
                     )
 
             for field in PRESENCE_FIELDS:
                 if root.find(field) is not None:
                     features.append(
-                        f"HAS_{field.upper()}"
+                        f"HAS={field.upper()}"
                     )
 
             return " ".join(features)
@@ -169,20 +169,20 @@ def extract_response_features(text: str) -> str:
 
         response, _ = decoder.raw_decode(cleaned_text)
 
-        features.append("RESPONSE_JSON")
+        features.append("RESPONSE_TYPE=JSON")
 
         status = response.get("statusCode")
 
         if status:
             features.append(
-                f"STATUS_{status}"
+                f"STATUS={status}"
             )
 
         description = response.get("description")
 
         if description:
             features.append(
-                f"DESCRIPTION_{description}"
+                f"DESCRIPTION={description}"
             )
 
         field_errors = response.get("fieldErrors")
@@ -196,7 +196,7 @@ def extract_response_features(text: str) -> str:
                     for error in values:
 
                         features.append(
-                            f"FIELD_ERROR_{error}"
+                            f"FIELD_ERROR={error}"
                         )
 
         return (
@@ -210,6 +210,70 @@ def extract_response_features(text: str) -> str:
         # Not valid JSON.
         # Still keep the response text.
         return cleaned_text
+    
+# =====================================
+# DESCRIPTION NORMALIZATION
+# =====================================
+
+def normalize_description(text: str) -> str:
+
+    if not text:
+        return ""
+
+    text = text.strip()
+
+    # ---------------------------------
+    # OTP cooldown messages
+    # ---------------------------------
+
+    text = re.sub(
+        r"Try after\s+\d+\s+Mins?",
+        "Try after N Mins",
+        text,
+        flags=re.IGNORECASE
+    )
+
+    # ---------------------------------
+    # Masked Aadhaar
+    # ---------------------------------
+
+    text = re.sub(
+        r"XXXXXXXX\d{4}",
+        "XXXXXXXX",
+        text
+    )
+
+    # ---------------------------------
+    # Plant / Product information
+    # ---------------------------------
+
+    text = re.sub(
+        r"\(Plant:.*",
+        "",
+        text
+    )
+
+    # ---------------------------------
+    # Input string values
+    # ---------------------------------
+
+    text = re.sub(
+        r'For input string:\s*".*?"',
+        "For input string",
+        text
+    )
+
+    # ---------------------------------
+    # Multiple spaces
+    # ---------------------------------
+
+    text = re.sub(
+        r"\s+",
+        " ",
+        text
+    )
+
+    return text.strip()
 
 # =====================================
 # LOAD DATASET
@@ -247,6 +311,7 @@ df["description"] = (
     df["description"]
     .fillna("")
     .astype(str)
+    .apply(normalize_description)
 )
 
 # =====================================
@@ -254,10 +319,11 @@ df["description"] = (
 # =====================================
 
 df["combined_text"] = (
-    "REQUEST:\n"
-    + df["request_string"]
-    + "\n\nRESPONSE:\n"
-    + df["response_string"]
+    "REQUEST\n"
+    + df["request_features"]
+    + "\n\n"
+    + "RESPONSE\n"
+    + df["response_features"]
 )
 
 print("\nExample request features:\n")
@@ -265,6 +331,18 @@ print(df["request_string"].iloc[0])
 
 print("\nExample response features:\n")
 print(df["response_string"].iloc[0])
+
+print("\nExample normalized descriptions:\n")
+
+examples = [
+    "Exceeded Maximum OTP generation Limit. Try after 5 Mins",
+    "PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX9123",
+    'For input string: "K-517"',
+    "The price/MRP must be same as the last two MRP entered by the company.(Plant: CIL Kakinada, Product: 20-20-0-13)"
+]
+
+for e in examples:
+    print(normalize_description(e))
 
 # =====================================
 # REMOVE RARE CATEGORIES
@@ -292,6 +370,14 @@ print(
 
 print(
     f"Unique categories: {df['description'].nunique()}"
+)
+
+print("\nTop 20 categories:\n")
+
+print(
+    df["description"]
+    .value_counts()
+    .head(20)
 )
 
 # =====================================
