@@ -122,3 +122,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+*.txt
+*.pkl
+*.pyc
