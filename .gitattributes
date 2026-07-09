@@ -1,0 +1,14 @@
+# Exclude common static/build/vendor directories from language stats
+static/ linguist-vendored
+public/ linguist-vendored
+build/ linguist-vendored
+dist/ linguist-vendored
+node_modules/ linguist-vendored
+vendor/ linguist-vendored
+
+# If your CSS files live in a specific folder, add it explicitly:
+assets/styles/ linguist-vendored
+
+# (Optional) Mark minified/bundled files as generated
+*.min.js linguist-generated
+*.min.css linguist-generated
