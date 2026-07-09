@@ -4,18 +4,16 @@ Machine Learning based API Error Classification and Resolution Assistant
 
 ErrorSense is a ML-powered diagnostic tool that classifies API and server failures from request and response into definitive categories. It provides insightful details like severity level, contextual resolutions, next steps and brief documentations. It combines NLP-based classification with a rule-driven knowledge base to assist developers and support teams in identifying common operational errors.
 
----
-
 ## Features
 
-• Classifies API failures into predefined categories
-• Supports both JSON and XML request formats
-• Parses response payloads to extract structured features
-• Returns confidence scores and alternative predictions
-• Provides resolutions, possible causes and prevention tips
-• Search history with a clean web interface
+- Classifies API failures into predefined categories
+- Supports both JSON and XML request formats
+- Parses response payloads to extract structured features
+- Returns confidence scores and alternative predictions
+- Provides resolutions, possible causes and prevention tips
+- Search history with a clean web interface
 
----
+![alt text](image.png)
 
 ## Dataset
 
@@ -35,8 +33,6 @@ After preprocessing and normalization, the dataset contains:
 - **58 normalized error categories**
 
 Normalizing semantically identical descriptions significantly reduced label fragmentation and improved overall classification performance.
-
----
 
 ## Feature Engineering
 
@@ -83,8 +79,6 @@ PLEASE REGISTER WITH PRIMARY AADHAAR XXXXXXXX
 
 This preprocessing reduced label fragmentation from **147** categories to **58** normalized categories, resulting in a significant improvement in classification performance.
 
----
-
 ## Model Selection
 
 Multiple machine learning models were evaluated during development.
@@ -101,8 +95,6 @@ Since prediction confidence is an important part of the user interface and API r
 
 This provided an excellent balance between prediction quality, interpretability, and probabilistic outputs.
 
----
-
 ## Knowledge Base
 
 The machine learning model is complemented by a lightweight rule-based knowledge base.
@@ -115,8 +107,6 @@ For each predicted error category, the system returns:
 - Preventive recommendation
 
 Separating operational knowledge from the classifier allows support documentation to evolve independently without retraining the model.
-
----
 
 ## Backend API
 
@@ -155,8 +145,6 @@ Example response:
 
 Returns the top prediction probabilities for debugging and model evaluation.
 
----
-
 ## Frontend
 
 The frontend is built using React and provides an interface for interactive error analysis.
@@ -172,8 +160,6 @@ Features include:
 - Recent search history
 - Responsive layout
 
----
-
 ## Results
 
 | Metric            | Value      |
@@ -186,8 +172,6 @@ Features include:
 
 The largest performance improvement was achieved through structured feature extraction and description normalization rather than replacing the underlying classifier.
 
----
-
 ## Future Work
 
 Possible future improvements include:
@@ -198,8 +182,6 @@ Possible future improvements include:
 - Automated retraining pipeline
 - Explainable AI techniques for prediction interpretation
 - Incremental learning for newly observed error categories
-
----
 
 ## Lessons Learned
 
